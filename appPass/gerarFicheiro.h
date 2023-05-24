@@ -4,22 +4,27 @@
 #include"gerarRandom.h"
 
 
-void gerarFicheiro(int gerarRandom){
+void gerarFicheiro(int tamanhoArrNumeroLetraReceber){
+
+	//tamanhoArrNumeroLetraReceber = 5;
+
+	int* arrNumeroLetraReceber = gerarRandom(tamanhoArrNumeroLetraReceber);
 
 
-	int receberNumeroLetra;
-	receberNumeroLetra = gerarRandom;
+	//tamanhoArrNumeroLetraReceber = sizeof(arrNumeroLetraReceber)/sizeof(arrNumeroLetraReceber[0]);
+
+
+	FILE* file = fopen("teste.txt", "w");
+
 	
+	for(int i = 0; i < tamanhoArrNumeroLetraReceber; i ++){
 
-	FILE* file = fopen(filename, "w");
-    	
+		fprintf(file, "%c", arrNumeroLetraReceber[i]);
 
-	for (int i = 0; i < size; i++) {
-		fprintf(file, "%d ", gerarRandom[i]);
 	}
-
+	
 	fclose(file);
 
-	saveArrayToFile(gerarRandom, size, "output.txt");
+
 
 }

@@ -1,17 +1,22 @@
 
-#include<stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
 
 int *gerarRandom(int tamanhoPass){
 	
 
 	int  *arrNumeroLetra, numeroVezes, tamanhoNumeroLetra, index = 0, index2 = 0, temp1, temp2;
-
+	char verificarFicheiro, adicionarNome;
 
 	// Gera um numero random para adicionar a quantidade de dados ascii
-	int min = 1;
-	int max = 100;
+	int min = 250;
+	int max = 500;
+
+	srand(time(NULL));
+
+
 	numeroVezes = min + rand() % (max - min + 1);
 
 
@@ -29,8 +34,6 @@ int *gerarRandom(int tamanhoPass){
 		}
 	}
 
-	//srand(time(NULL));
-
 	// Fazer troca de posicoes
 	for(int i = tamanhoNumeroLetra; i > 0 ; i--){
 		// Gera um index a sorte e aplica a troca		
@@ -44,9 +47,51 @@ int *gerarRandom(int tamanhoPass){
 	// Imprimir a password
 	
 
-	for(int i = 25; i <(25 + tamanhoPass); i++){
+	for(int i = numeroVezes; i <(numeroVezes + tamanhoPass); i++){
 		printf("%c", arrNumeroLetra[i]);
 	}
-	return arrNumeroLetra;
 
+	
+	// Gerar ficheiro txt ----------------
+
+
+	printf("Do you want to generate a .txt with the password? S ou N \n");
+	scanf(" %c", &verificarFicheiro);
+
+	printf("Ad where your are going to use the password: ");
+        scanf(" %c", &adicionarNome);
+
+
+
+        if(verificarFicheiro == 'S'){
+
+                FILE* file = fopen("teste.txt", "w");
+
+                fprintf(file, "%c \n" , adicionarNome);
+
+                for(int i = numeroVezes; i < (numeroVezes + tamanhoPass); i ++){
+
+                       fprintf(file, "%c", arrNumeroLetra[i]);
+
+                }
+
+                fclose(file);
+        }	
+	
+	
+	if(verificarFicheiro == 'S'){
+
+		FILE* file = fopen("teste.txt", "w");
+
+		fprintf(file, "Rodolfo\nemail");
+
+		for(int i = numeroVezes; i < (numeroVezes + tamanhoPass); i ++){
+
+		       fprintf(file, "%c", arrNumeroLetra[i]);
+
+		}
+
+		fclose(file);
+	}
+	return arrNumeroLetra;
 }
