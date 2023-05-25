@@ -14,6 +14,10 @@ This program in the future is supost to:
 
 
 24/05
-Errors to be fixed:
+Errors 1.1  to be fixed:
 
 	- Generating a .txt file with a name and the password;
+25/05
+Error 1.1 Fixed:
+
+	- We can place text before the password we create.

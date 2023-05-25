@@ -20,6 +20,7 @@ void janelaPrograma(){
 		
 		case '1':
 		{
+			printf("\n");
 			printf("Insert the password size: \n");
 			scanf("%d", &tamanhoPass);
 			gerarRandom(tamanhoPass);
