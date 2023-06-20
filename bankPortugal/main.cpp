@@ -6,7 +6,7 @@ using namespace std;
 
 int main(){
 
-	// Teste
+	// Teste2
 	Client client1("Rodolfo");
 	client1.printClient();
 	return 0;
