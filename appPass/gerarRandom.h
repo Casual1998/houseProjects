@@ -4,6 +4,9 @@
 #include <time.h>
 
 
+
+
+
 int *gerarRandom(int tamanhoPass){
 	
 
@@ -50,61 +53,11 @@ int *gerarRandom(int tamanhoPass){
 	}
 	printf("\n");
 
-	
+/*	
 	// Gerar ficheiro txt ----------------
 
 	printf("Do you want to generate a .txt with the password? S ou N \n");
 	scanf(" %c", &verificarFicheiro);
-
-
-
-        if(verificarFicheiro == 'S'){
-
-		// Insert the a name to the password
-		printf("Ad where your are going to use the password: \n Ex: Email  $a8&:B5 \n");
-        	scanf(" %[^\n]", infoFicheiro);
-
-		//Size of the number
-                //tamanhoPreencherDocumento = sizeof(infoFicheiro) / sizeof(infoFicheiro[0]);
-		
-		//infoFicheiro = (char*)  malloc(tamanhoPreencherDocumento* sizeof(char));
-
-		/*
-		for(int i = 0; i < tamanhoPreencherDocumento; i++){
-		
-			printf("%s", infoFicheiro[i]);
-
-		}
-		*/		
-
-                FILE* file = fopen("teste.txt", "w");
-
-                fprintf(file, "%s \n" , infoFicheiro);
-
-                for(int i = numeroVezes; i < (numeroVezes + tamanhoPass); i ++){
-
-                       fprintf(file, "%c", arrNumeroLetra[i]);
-
-                }
-
-                fclose(file);
-        }	
-	
-/*	
-	if(verificarFicheiro == 'S'){
-
-		FILE* file = fopen("teste.txt", "w");
-
-		fprintf(file, "Rodolfo\nemail");
-
-		for(int i = numeroVezes; i < (numeroVezes + tamanhoPass); i ++){
-
-		       fprintf(file, "%c", arrNumeroLetra[i]);
-
-		}
-
-		fclose(file);
-	}
 */
 	return arrNumeroLetra;
 }
